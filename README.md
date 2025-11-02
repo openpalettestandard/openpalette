@@ -2,13 +2,11 @@
 
 **An Open-Source Design Language & Palette Framework**
 
+This is work in progress, the tooling isn't finished and the specification and documentation isn't finished either. Subject to change, but the goal is to have a standardized format and toolchain to create color palette organizations to bring themes to various applications.
+
 ## 1. Overview
 
 OpenPalette is a standardized, open-source design language and palette framework that provides a unified structure for creating consistent, accessible, and interoperable color palettes. It bridges the gap between existing design systems by establishing common standards for accent colors, semantic hierarchy, and terminal integration.
-
-**License**: MIT  
-**Version**: 1.0  
-**Compatibility**: Catppuccin, Material Design 14-color systems
 
 ## 2. Core Principles
 
@@ -76,8 +74,11 @@ Each palette MUST include:
   }
 }
 ```
-4.2 Color Object Format
+
+### 4.2 Color Object Format
+
 Each color MUST include:
+
 ```json
 {
   "name": "string",
@@ -96,7 +97,9 @@ Each color MUST include:
   "accent": boolean
 }
 ```
-4.3 Complete Palette Example
+
+### 4.3 Complete Palette Example
+
 ```json
 {
   "name": "Example Palette",
@@ -115,41 +118,45 @@ Each color MUST include:
   }
 }
 ```
-5. ANSI Terminal Mapping
-OpenPalette defines standard ANSI color mapping for terminal compatibility:
-ANSI CodeStandard NameOpenPalette Mapping0Blackcrust1Redred2Greengreen3Yellowyellow4Blueblue5Magentapurple6Cyancyan7Whitetext8Bright Blacksurface29Bright Redmaroon10Bright Greenteal11Bright Yelloworange12Bright Bluesky13Bright Magentamauve14Bright Cyansapphire15Bright Whitesubtext1
-6. Accessibility Requirements
-6.1 Contrast Standards
 
-text on base: MUST meet WCAG AA (4.5:1)
-subtext1 on base: MUST meet WCAG AA (4.5:1)
-subtext0 on base: SHOULD meet WCAG AA (4.5:1)
-Accent colors on base: SHOULD meet WCAG AA when used for text
+## 5. ANSI Terminal Mapping
+OpenPalette defines standard ANSI color mapping for terminal compatibility
 
-6.2 Color Differentiation
+## 6. Accessibility Requirements
 
-All accent colors MUST be distinguishable from each other
-Semantic hierarchy MUST be visually apparent
-Palette MUST work for common color vision differences
+### 6.1 Contrast Standards
 
-7. Validation Rules
-7.1 Required Elements
+- text on base: MUST meet WCAG AA (4.5:1)
+- subtext1 on base: MUST meet WCAG AA (4.5:1)
+- subtext0 on base: SHOULD meet WCAG AA (4.5:1)
+- Accent colors on base: SHOULD meet WCAG AA when used for text
 
-MUST contain exactly 14 accent colors
-MUST contain exactly 12 semantic elements
-MUST include all required color object fields
-MUST use valid hex color codes
-MUST include valid RGB values (0-255)
-MUST include valid HSL values (h: 0-360, s/l: 0-1)
+### 6.2 Color Differentiation
 
-7.2 Naming Conventions
+- All accent colors MUST be distinguishable from each other
+- Semantic hierarchy MUST be visually apparent
+- Palette MUST work for common color vision differences
 
-Color names MUST use lowercase
-No spaces or special characters in color names
-Palette name SHOULD be descriptive and unique
+## 7. Validation Rules
 
-8. Implementation Guidelines
-8.1 File Structure
+### 7.1 Required Elements
+
+- MUST contain exactly 14 accent colors
+- MUST contain exactly 12 semantic elements
+- MUST include all required color object fields
+- MUST use valid hex color codes
+- MUST include valid RGB values (0-255)
+- MUST include valid HSL values (h: 0-360, s/l: 0-1)
+
+### 7.2 Naming Conventions
+
+- Color names MUST use lowercase
+- No spaces or special characters in color names
+- Palette name SHOULD be descriptive and unique
+
+## 8. Implementation Guidelines
+
+### 8.1 File Structure
 ```text
 palette-name/
 ├── palette.json          # Core palette definition
@@ -161,37 +168,35 @@ palette-name/
     ├── web/
     └── ...
 ```
-8.2 Versioning
 
-Use semantic versioning (MAJOR.MINOR.PATCH)
-Major version changes for breaking color modifications
-Minor version for new features or non-breaking additions
-Patch version for fixes and adjustments
+## 8.2 Versioning
 
-9. Community Standards
-9.1 Contribution Guidelines
+- Use semantic versioning (MAJOR.MINOR.PATCH)
+- Major version changes for breaking color modifications
+- Minor version for new features or non-breaking additions
+- Patch version for fixes and adjustments
 
-All palettes MUST be open source
-MUST include proper attribution
-SHOULD include usage examples
-SHOULD provide multiple format exports
+## 9. Community Standards
 
-9.2 Quality Standards
+### 9.1 Contribution Guidelines
 
-MUST pass OpenPalette validation
-SHOULD include accessibility testing results
-SHOULD provide both light and dark variants
-MUST include comprehensive documentation
+- All palettes MUST be open source
+- MUST include proper attribution
+ - SHOULD include usage examples
+- SHOULD provide multiple format exports
 
-10. Compliance
+### 9.2 Quality Standards
+
+- MUST pass OpenPalette validation
+- SHOULD include accessibility testing results
+- SHOULD provide both light and dark variants
+- MUST include comprehensive documentation
+
+## 10. Compliance
 A palette is OpenPalette-compliant if it:
 
-✅ Contains exactly 26 colors (14 accents + 12 semantic)
-✅ Uses the specified data format
-✅ Meets accessibility requirements
-✅ Passes validation rules
-✅ Includes required metadata
-
-OpenPalette Specification v1.0
-Building bridges between design systems
-This specification is open source and community-maintained. Contributions welcome.
+- Contains exactly 26 colors (14 accents + 12 semantic)
+- Uses the specified data format
+- Meets accessibility requirements
+- Passes validation rules
+- Includes required metadata
